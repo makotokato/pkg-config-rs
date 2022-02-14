@@ -421,6 +421,7 @@ impl Config {
                 // if not disabled, and pkg-config is customized,
                 // then assume it's prepared for cross-compilation
                 self.targetted_env_var("PKG_CONFIG").is_some()
+                    || self.targetted_env_var("PKG_CONFIG_LIBDIR").is_some()
                     || self.targetted_env_var("PKG_CONFIG_SYSROOT_DIR").is_some()
             }
         }
